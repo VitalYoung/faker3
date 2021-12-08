@@ -18,13 +18,14 @@ jobs:
         if: github.event.repository.owner.id == github.event.sender.id
         steps:
             - uses: actions/checkout@v1
-            - name: Use Node.js 12.x
+            - name: Use Node.js 16.x
               uses: actions/setup-node@v1
               with:
-                  node-version: 12.x
+                  node-version: 16.x
             - name: npm install
               run: |
                   npm install
+                  npm audit fix
             - name: "RUN jd_bean_change_new.js"
               run: |
                   node jd_bean_change_new.js
