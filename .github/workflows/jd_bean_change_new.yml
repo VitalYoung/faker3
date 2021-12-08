@@ -25,7 +25,6 @@ jobs:
             - name: npm install
               run: |
                   npm install
-                  npm audit fix
             - name: "RUN jd_bean_change_new.js"
               run: |
                   node jd_bean_change_new.js
